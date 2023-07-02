@@ -2,6 +2,7 @@ import numpy as np
 import streamlit as st
 import joblib
 from streamlit_extras.switch_page_button import switch_page
+import time
 
 weights, bias, hyperparams = joblib.load('hyperparameters.joblib')
 
