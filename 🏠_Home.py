@@ -16,6 +16,7 @@ st.markdown(
 )
 
 st.title(" ")
+st.title(" ")
 data_entry = st.button("Click Here to enter the details of the patients")
 if data_entry:
     switch_page("Patient Data")
