@@ -4,6 +4,6 @@ from streamlit_extras.switch_page_button import switch_page
 st.title("Diabetes Disease Classification")
 
 
-want_to_contribute = st.button("Click Here to upload the Image")
+data_entry = st.button("Click Here to enter the details of the patients")
 if want_to_contribute:
-    switch_page("Upload Image")
+    switch_page("Patient Data")
