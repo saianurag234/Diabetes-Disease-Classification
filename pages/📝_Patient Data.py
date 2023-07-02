@@ -54,7 +54,7 @@ with col1:
     age = st.number_input('Enter the Age',0,100,0,1,'%d')
     
 with col2:
-    bmi = st.number_input('Enter the BMI',0,100,0,1,'%d')
+    bmi = st.number_input('Enter the BMI',0,100,0,0.1,'%f')
         
 with col1:
     glucose = st.number_input('Enter the Glucose Level',0,200,0,1,'%d')
