@@ -72,7 +72,7 @@ with col5:
     SkinThickness = st.number_input('Enter the Thickness of Skin',0,100,0,1,'%d')
 
 with col6:
-    dpf = st.number_input('Enter the Diabetes Pedigree Function',0,100,0,1,'%d')
+    dpf = st.number_input('Enter the Diabetes Pedigree Function',0.0,5.0,0.0,0.001,'%f')
         
 button = st.button("Predict")
 
