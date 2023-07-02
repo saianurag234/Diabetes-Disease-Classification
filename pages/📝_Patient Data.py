@@ -41,6 +41,8 @@ def diabetes_pred(input_data):
     return 1 if predicted_output >= 0.5 else 0
     
 st.subheader("Enter the details of the patients")
+
+st.subheader(" ")
     
 col1, col2 = st.columns(2)
     
@@ -74,6 +76,7 @@ button = st.button("Predict")
 if button:
     data = np.array([pregnancies, glucose, BP, SkinThickness, insulin, bmi, dpf, age])
     prediction = diabetes_pred(data) 
+    st.subheader(prediction)
     st.session_state['prediction'] = prediction
   
     with st.spinner('Wait for it...'):
