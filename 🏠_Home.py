@@ -6,7 +6,7 @@ image_url = "https://assets.newatlas.com/dims4/default/3461759/2147483647/strip/
 st.title("Diabetes Disease Classification")
 st.title(" ")
 
-st.image(image_url,width=500)
+st.markdown("<h1 style='font-size: 48px; text-align: left;'>Diabetes Disease Classification</h1>", unsafe_allow_html=True)
 
 st.title(" ")
 data_entry = st.button("Click Here to enter the details of the patients")
