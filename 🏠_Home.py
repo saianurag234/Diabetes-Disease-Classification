@@ -10,13 +10,12 @@ st.title(" ")
 
 st.markdown(
     f'<div style="display: flex; justify-content: center;">'
-    f'<img src="{image_url}" alt="Image" width="600" align="left">'
+    f'<img src="{image_url}" alt="Image" width="550" align="left">'
     '</div>',
     unsafe_allow_html=True
 )
 
 st.title(" ")
-st.subheader(" ")
 data_entry = st.button("Click Here to enter the details of the patients")
 if data_entry:
     switch_page("Patient Data")
