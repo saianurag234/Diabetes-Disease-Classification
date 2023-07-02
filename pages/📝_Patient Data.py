@@ -5,6 +5,19 @@ from streamlit_extras.switch_page_button import switch_page
 
 weights, bias, hyperparams = joblib.load('hyperparameters.joblib')
 
+def sigmoid(z):
+    a=np.zeros([1,1])
+    a=1/(1+np.exp(-z))
+    return a
+    
+def ReLU(z):
+    return np.maximum(z, 0)
+
+def tanh(z):
+    z=(np.exp(z)-np.exp(-z))/(np.exp(z)+np.exp(-z))
+    z=1-z**2
+    return z
+
 def forward_propagation(weights, bias, hyperparams, x):
     z = []    
     a = []
