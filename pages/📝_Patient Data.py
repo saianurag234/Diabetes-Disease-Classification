@@ -54,7 +54,7 @@ with col1:
     age = st.number_input('Enter the Age',0,100,0,1,'%d')
     
 with col2:
-    bmi = st.number_input('Enter the BMI',0.0,100.0,0,1,'%f')
+    bmi = st.number_input('Enter the BMI',0.0,100.0,0.0,1.0,'%f')
         
 with col1:
     glucose = st.number_input('Enter the Glucose Level',0,200,0,1,'%d')
@@ -70,6 +70,9 @@ with col4:
 
 with col5:
     SkinThickness = st.number_input('No.of Childrens for the paitents',0,100,0,1,'%d')
+
+with col6:
+    dpf = st.number_input('Enter the Diabetes Pedigree Function',0,100,0,1,'%d')
         
 button = st.button("Predict")
 
