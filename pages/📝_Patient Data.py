@@ -93,7 +93,6 @@ button = st.button("Predict")
 if button:
     data = np.array([pregnancies, glucose, BP, SkinThickness, insulin, bmi, dpf, age])
     prediction = diabetes_pred(data) 
-    st.subheader(prediction)
     st.session_state['prediction'] = prediction
   
     with st.spinner('Wait for it...'):
