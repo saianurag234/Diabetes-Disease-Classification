@@ -1,58 +1,79 @@
 import numpy as np
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
-def churn_pred(pred_input):
+with open('hyperparameters.pickle', 'rb') as file:
+    weights, bias = pickle.load(file)
 
-    feature_columns = ['credit_score', 'country', 'gender', 'age', 'tenure', 'balance','products_number', 'credit_card','active_member', 'estimated_salary']
+def forward_propagation(weights, bias, hyperparams, x):
+    z = []    
+    a = []
+    i = 0
+    while i <= hyperparams['no_hidden_layers']:
+        if i == 0:
+            z.append(np.matmul(weights[i].T,x) + bias[i])   
+        else:
+            z.append(np.matmul(weights[i].T, a[i - 1]) + bias[i]) 
+        if i == hyperparams['no_hidden_layers']:   
+            if(hyperparams['output_activation_function'] == 'sigmoid'):
+                a.append(sigmoid(z[i]))
+            elif(hyperparams['output_activation_function'] == 'tanh'):
+                a.append(tanh(z[i]))
+            elif(hyperparams['output_activation_function'] == 'relu'):
+                a.append(ReLU(z[i]))
+        else:      
+            if(hyperparams['activation_function_'+str(i)] == 'sigmoid'):
+                a.append(sigmoid(z[i]))
+            elif(hyperparams['activation_function_'+str(i)] == 'tanh'):
+                a.append(tanh(z[i]))
+            elif(hyperparams['activation_function_'+str(i)] == 'relu'):
+                a.append(ReLU(z[i]))
+        
+        i+=1
     
-    df_input = pd.DataFrame([pred_input], feature_columns)  
-    
-    scale_input = pickled_scaler.transform(df_input)
-    
-    df_scale = pd.DataFrame(scale_input, feature_columns) 
-     
-    prediction = pickled_model.predict(df_scale)
-    
-    return prediction
-    
+    return z, a
 
-def main():
 
+def diabetes_pred(input_data):
+    data = np.array(input_data).reshape(-1, 1) 
+    z, a = forward_propagation(weights, bias, hyperparams, data)
+    predicted_output = np.max(a[hyperparams['no_hidden_layers']])
+    return 1 if predicted_output >= 0.5 else 0
     
-    st.subheader("Enter the details of the patients")
+st.subheader("Enter the details of the patients")
     
-    col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
     
-    col3,col4 = st.columns(2)
+col3,col4 = st.columns(2)
     
-    col5,col6 = st.columns(2)
+col5,col6 = st.columns(2)
     
-    with col1:
-        age = st.number_input('Enter the Age',0,100,0,1,'%d')
+with col1:
+    age = st.number_input('Enter the Age',0,100,0,1,'%d')
     
-    with col2:
-        bmi = st.number_input('Enter the BMI',0,100,0,1,'%f')
+with col2:
+    bmi = st.number_input('Enter the BMI',0,100,0,1,'%d')
         
-    with col1:
-        glucose = st.number_input('Enter the Glucose Level',0,200,0,1,'%d')
+with col1:
+    glucose = st.number_input('Enter the Glucose Level',0,200,0,1,'%d')
         
-    with col2:
-        bp = st.number_input('Enter the Blood Pressure (BP)',0,150,0,1,'%d')
+with col2:
+    BP = st.number_input('Enter the Blood Pressure (BP)',0,150,0,1,'%d')
         
-    with col3:
-        insulin = st.number_input('Enter the Insulin level',0,1000,0,1,'%d')
+with col3:
+    insulin = st.number_input('Enter the Insulin level',0,1000,0,1,'%d')
         
-    with col4:
-        pregnencies = st.number_input('No.of Childrens for the paitents',0,10,0,1,'%d')
+with col4:
+    pregnancies = st.number_input('No.of Childrens for the paitents',0,10,0,1,'%d')
         
-    
-    
-    button = st.button("Predict")
-      
-        
+button = st.button("Predict")
 
-        
-if __name__ == '__main__':
-    main()
+if button:
+    data = np.array([pregnancies, glucose, BP, SkinThickness, insulin, bmi, dpf, age])
+    prediction = diabetes_pred(data) 
+    st.session_state['prediction'] = prediction
   
-  
+    with st.spinner('Wait for it...'):
+        time.sleep(5)
+    
+    #switch_page("results")
