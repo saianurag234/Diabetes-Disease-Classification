@@ -96,6 +96,6 @@ if button:
     st.session_state['prediction'] = prediction
   
     with st.spinner('Wait for it...'):
-        time.sleep(5)
+        time.sleep(3)
     
     switch_page("results")
