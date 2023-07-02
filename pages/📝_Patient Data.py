@@ -99,4 +99,4 @@ if button:
     with st.spinner('Wait for it...'):
         time.sleep(5)
     
-    #switch_page("results")
+    switch_page("results")
