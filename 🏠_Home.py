@@ -3,10 +3,11 @@ from streamlit_extras.switch_page_button import switch_page
 
 image_url = "https://assets.newatlas.com/dims4/default/3461759/2147483647/strip/true/crop/7360x4907+0+3/resize/840x560!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F10%2F7f%2F5e48f79245c0b831a58d7cf8fb1d%2Fdepositphotos-228244172-xl.jpg"
 
-st.title("Diabetes Disease Classification")
+#st.title("Diabetes Disease Classification")
+st.markdown("<h1 style='font-size: 48px; text-align: left;'>Diabetes Disease Classification</h1>", unsafe_allow_html=True)
 st.title(" ")
 
-st.markdown("<h1 style='font-size: 48px; text-align: left;'>Diabetes Disease Classification</h1>", unsafe_allow_html=True)
+st.image(image_url,width=500)
 
 st.title(" ")
 data_entry = st.button("Click Here to enter the details of the patients")
