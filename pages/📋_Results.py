@@ -10,7 +10,7 @@ if(final_prediction == 0):
     st.header("The Paitent is not having Diabetes")
 
 if(final_prediction == 1):
-    st.markdown("**The Patient is having Diabetes**")
+    st.markdown("<h2 style='font-size: 24px;'>**The Patient is having Diabetes**</h2>", unsafe_allow_html=True)
 
 back = st.button("Click here to try again")
 if back:
