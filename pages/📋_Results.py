@@ -10,7 +10,7 @@ if(final_prediction == 0):
     st.header("The Paitent is not having Diabetes")
 
 if(final_prediction == 1):
-    st.header("The Paitent is having Diabetes")
+    st.markdown("**The Patient is having Diabetes**")
 
 back = st.button("Click here to try again")
 if back:
