@@ -7,11 +7,11 @@ if 'prediction' in st.session_state:
     final_prediction = st.session_state['prediction']
 
 if(final_prediction == 0):
-    st.subheader("The Paitent is not having Diabetes")
+    st.header("The Paitent is not having Diabetes")
 
 if(final_prediction == 1):
-    st.subheader("The Paitent is having Diabetes")
+    st.header("The Paitent is having Diabetes")
 
 back = st.button("Click here to try again")
 if back:
-    switch_page("Upload Image")
+    switch_page("Patient Data")
