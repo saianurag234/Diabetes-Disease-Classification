@@ -10,7 +10,7 @@ st.title(" ")
 
 st.markdown(
     f'<div style="display: flex; justify-content: center;">'
-    f'<img src="{image_url}" alt="Image" width="500" align="left">'
+    f'<img src="{image_url}" alt="Image" width="600" align="left">'
     '</div>',
     unsafe_allow_html=True
 )
