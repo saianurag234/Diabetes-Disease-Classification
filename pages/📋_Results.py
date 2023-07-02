@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 import numpy as np
 import time
 
-image_url = "https://img.freepik.com/free-vector/diabetes-flat-composition-medical-with-patient-symptoms-complications-blood-sugar-meter-treatments-medication_1284-28998.jpg?w=500"
+image_url = "https://us.123rf.com/450wm/ximagination/ximagination2102/ximagination210201046/163994189-diabetes-2d-flat-vector-concept-for-banner-website-illustration-landing-page-flyer-etc.jpg?ver=6"
 
 if 'prediction' in st.session_state:
     final_prediction = st.session_state['prediction']
