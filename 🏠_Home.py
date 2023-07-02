@@ -6,6 +6,10 @@ image_url = "https://assets.newatlas.com/dims4/default/3461759/2147483647/strip/
 st.title("Diabetes Disease Classification")
 st.title(" ")
 st.sidebar.title("Created By:")
+st.sidebar.subheader("P.S.S.Sai.Keerthan")
+st.sidebar.subheader("P.Komal Sai Anurag")
+st.sidebar.subheader("Varun Udayagiri")
+st.sidebar.subheader("Sejal Singh")
 
 #st.image(image_url,width=500)
 
