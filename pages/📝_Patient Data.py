@@ -69,7 +69,7 @@ with col4:
     pregnancies = st.number_input('No.of Childrens for the paitents',0,10,0,1,'%d')
 
 with col5:
-    SkinThickness = st.number_input('No.of Childrens for the paitents',0,100,0,1,'%d')
+    SkinThickness = st.number_input('Enter the Thickness of Skin',0,100,0,1,'%d')
 
 with col6:
     dpf = st.number_input('Enter the Diabetes Pedigree Function',0,100,0,1,'%d')
