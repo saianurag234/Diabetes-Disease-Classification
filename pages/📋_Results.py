@@ -15,6 +15,7 @@ if(final_prediction == 1):
     st.markdown("<h1 style='font-size: 38px;'>The Patient is having Diabetes</h1>", unsafe_allow_html=True)
     st.image(image_url)
 
+st.title(" ")
 back = st.button("Click here to try again")
 if back:
     switch_page("Patient Data")
