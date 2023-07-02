@@ -1,9 +1,9 @@
 import numpy as np
 import streamlit as st
+import joblib
 from streamlit_extras.switch_page_button import switch_page
 
-with open('hyperparameters.pickle', 'rb') as file:
-    weights, bias = pickle.load(file)
+weights, bias = joblib.load('hyperparameters.joblib')
 
 def forward_propagation(weights, bias, hyperparams, x):
     z = []    
