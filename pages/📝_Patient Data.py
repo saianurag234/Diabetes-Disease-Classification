@@ -51,7 +51,7 @@ col3,col4 = st.columns(2)
 col5,col6 = st.columns(2)
     
 with col1:
-    age = st.number_input('Enter the Age',0,100,'%d')
+    age = st.number_input('Enter the Age',0,100,0,1,'%d')
     
 with col2:
     bmi = st.number_input('Enter the BMI',0,100,0,1,'%d')
