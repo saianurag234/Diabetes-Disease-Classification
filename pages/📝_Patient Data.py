@@ -65,6 +65,9 @@ with col3:
         
 with col4:
     pregnancies = st.number_input('No.of Childrens for the paitents',0,10,0,1,'%d')
+
+with col4:
+    SkinThickness = st.number_input('No.of Childrens for the paitents',0,100,0,1,'%d')
         
 button = st.button("Predict")
 
