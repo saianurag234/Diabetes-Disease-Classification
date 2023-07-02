@@ -1,4 +1,5 @@
 import numpy as np
+import streamlit as st
 
 def churn_pred(pred_input):
 
