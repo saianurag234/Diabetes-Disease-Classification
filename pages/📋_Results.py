@@ -3,13 +3,13 @@ from streamlit_extras.switch_page_button import switch_page
 import numpy as np
 import time
 
+if 'prediction' in st.session_state:
+    final_prediction = st.session_state['prediction']
 
-final_prediction = prediction
-
-if(prediction == 0):
+if(final_prediction == 0):
     st.subheader("The Paitent is not having Diabetes")
 
-if(prediction == 1):
+if(final_prediction == 1):
     st.subheader("The Paitent is having Diabetes")
 
 back = st.button("Click here to try again")
