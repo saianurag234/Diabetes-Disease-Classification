@@ -5,5 +5,5 @@ st.title("Diabetes Disease Classification")
 
 
 data_entry = st.button("Click Here to enter the details of the patients")
-if want_to_contribute:
+if data_entry:
     switch_page("Patient Data")
