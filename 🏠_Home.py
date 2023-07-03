@@ -21,6 +21,6 @@ st.markdown(
 )
 
 st.title(" ")
-data_entry = st.button(:red["Click Here to enter the details of the patients"])
+data_entry = st.button("Click Here to enter the details of the patients", key="red")
 if data_entry:
     switch_page("Patient Data")
