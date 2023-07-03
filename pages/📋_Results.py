@@ -14,16 +14,15 @@ if(final_prediction == 0):
     f'<div style="display: flex; justify-content: center;">'
     f'<img src="{image_url_no_diabetes}" alt="Image" width="550" align="center">'
     '</div>',
-    unsafe_allow_html=True
+    unsafe_allow_html=True)
 
-else:
+if(final_prediction == 1):
     st.markdown("<h1 style='font-size: 38px;'>The Patient is having Diabetes</h1>", unsafe_allow_html=True)
     st.markdown(
     f'<div style="display: flex; justify-content: center;">'
     f'<img src="{image_url_diabetes}" alt="Image" width="550" align="center">'
     '</div>',
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
 
 st.title(" ")
 back = st.button("Click here to try again")
