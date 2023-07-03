@@ -16,7 +16,7 @@ if(final_prediction == 0):
     '</div>',
     unsafe_allow_html=True
 
-if(final_prediction == 1):
+else:
     st.markdown("<h1 style='font-size: 38px;'>The Patient is having Diabetes</h1>", unsafe_allow_html=True)
     st.markdown(
     f'<div style="display: flex; justify-content: center;">'
